@@ -5,7 +5,7 @@ import numpy as np
 
 @dataclass
 class ReplayBuffer:
-    max_size: int = 100
+    max_size: int = np.inf
 
     def __post_init__(self):
         self.buffers = set()
