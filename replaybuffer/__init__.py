@@ -1,1 +1,1 @@
-from .core.replaybuffer import ReplayBuffer
+from .replaybuffer import ReplayBuffer

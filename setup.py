@@ -18,12 +18,14 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="<insert url>",
     keywords=[],
-    install_requires=[],
+    install_requires=[
+        "numpy"
+    ],
     extras_require={"docs": docs_extras},
-    # license="MIT",
-    package_dir={"": "replaybuffer"},
-    packages=setuptools.find_packages(where="src"),
-    include_package_data=True,
+    license="MIT",
+    packages=setuptools.find_packages(),
+    # package_dir={"": "src"},
+    # include_package_data=True,
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Programming Language :: Python :: 3",
