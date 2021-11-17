@@ -13,6 +13,13 @@ class ReplayBuffer:
         self.ptr = 0
         self.size = 0
 
+    def reset(self) -> None:
+        """
+        Clears all buffer values.
+        """
+        for buffer in self.buffers:
+            self.initialize_buffer(buffer)
+
     def initialize_buffer(self, buffer_name: str) -> None:
         """
         Initialize a new buffer in memory.
