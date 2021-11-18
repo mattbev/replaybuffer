@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Any, Generator, Iterable, Union
+from typing import Any, Dict, Generator, Iterable, Tuple, Union  
 
 import numpy as np
 
@@ -141,7 +141,7 @@ class ReplayBuffer:
         return self.__dict__[buffer][idx]
 
     @staticmethod
-    def remove_nones(*arrays: Iterable) -> tuple[Iterable]:
+    def remove_nones(*arrays: Iterable) -> Tuple[Iterable]:
         """
         Take inputted arrays that may contain None values, and
         return copies without Nones.
@@ -151,7 +151,7 @@ class ReplayBuffer:
         """
         return tuple([[i for i in array if i is not None] for array in arrays])
 
-    def __getitem__(self, idx: int) -> dict[str, object]:
+    def __getitem__(self, idx: int) -> Dict[str, object]:
         """
         Get items at an index.
 
