@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Any, Dict, Generator, Iterable, Tuple, Union
+from typing import Any, Dict, Generator, Iterable, Union
 
 import numpy as np
 
@@ -35,17 +35,17 @@ class ReplayBuffer:
         Store items in each buffer.
 
         Example:
-            ```python
-            buffer = ReplayBuffer()
-            buffer.initialize_buffer("chain1")
-            buffer.initialize_buffer("chain2")
+            .. code-block:: python
 
-            for i in range(10):
-                buffer.store(
-                    chain1 = i,
-                    chain2 = 2*i
-                )
-            ```
+                buffer = ReplayBuffer()
+                buffer.initialize_buffer("chain1")
+                buffer.initialize_buffer("chain2")
+
+                for i in range(10):
+                    buffer.store(
+                        chain1 = i,
+                        chain2 = 2*i
+                    )
         """
         for k, v in kwargs.items():
             getattr(self, k)[self.ptr] = v
@@ -93,19 +93,19 @@ class ReplayBuffer:
                 for each buffer.
 
         Example:
-            ```python
-            buffer = ReplayBuffer()
-            buffer.initialize_buffer("chain1")
-            buffer.initialize_buffer("chain2")
+            .. code-block:: python
 
-            for i in range(10):
-                buffer.store(
-                    chain1 = i,
-                    chain2 = 2*i
-                )
+                buffer = ReplayBuffer()
+                buffer.initialize_buffer("chain1")
+                buffer.initialize_buffer("chain2")
 
-            buffer.take(range(0, 5))
-            ```
+                for i in range(10):
+                    buffer.store(
+                        chain1 = i,
+                        chain2 = 2*i
+                    )
+
+                buffer.take(range(0, 5))
         """
         return {k: getattr(self, k).take(*args, **kwargs) for k in self.buffers}
 
@@ -140,16 +140,6 @@ class ReplayBuffer:
         """
         return self.__dict__[buffer][idx]
 
-    @staticmethod
-    def remove_nones(*arrays: Iterable) -> Tuple[Iterable]:
-        """
-        Take inputted arrays that may contain None values, and
-        return copies without Nones.
-
-        Returns:
-            tuple[Iterable]: New arrays with only non-None values
-        """
-        return tuple([[i for i in array if i is not None] for array in arrays])
 
     def __getitem__(self, idx: int) -> Dict[str, object]:
         """

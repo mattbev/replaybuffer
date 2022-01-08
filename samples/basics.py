@@ -1,4 +1,5 @@
 from replaybuffer import ReplayBuffer
+from replaybuffer.utils import remove_nones
 
 
 def main():
@@ -10,10 +11,7 @@ def main():
     print(buffer.previous(n=10))
     print()
 
-    buffer.store(
-        stream_1=1,
-        stream_2="some other data"
-    )
+    buffer.store(stream_1=1, stream_2="some other data")
 
     print("After adding one element")
     print(buffer.previous(n=10))
@@ -21,17 +19,14 @@ def main():
 
     print("Cleaned up")
     prev = buffer.previous(n=10)
-    s1, s2 = buffer.remove_nones(*prev.values())
+    s1, s2 = remove_nones(*prev.values())
     print(s1)
     print(s2)
     print()
 
     print("Sampling")
     for i in range(100):
-        buffer.store(
-            stream_1 = i,
-            stream_2 = i+1
-        )
+        buffer.store(stream_1=i, stream_2=i + 1)
 
     print(buffer.sample(n=10))
     print()
@@ -39,6 +34,7 @@ def main():
     print("Taking")
     print(buffer.take(range(0, 5)))
     print(buffer[0:5])
+
 
 if __name__ == "__main__":
     main()
