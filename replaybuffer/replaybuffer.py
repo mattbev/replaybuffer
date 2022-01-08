@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Any, Dict, Generator, Iterable, Tuple, Union  
+from typing import Any, Dict, Generator, Iterable, Tuple, Union
 
 import numpy as np
 

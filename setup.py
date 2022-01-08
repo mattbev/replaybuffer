@@ -13,10 +13,10 @@ setuptools.setup(
     version="0.0.1",
     author="Matthew Beveridge",
     author_email="mattbev@mit.edu",
-    description="<insert short description>",
+    description="A simple replay buffer for temporal recall.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="<insert url>",
+    url="https://mattbeveridge.com/replaybuffer",
     keywords=[],
     install_requires=[
         "numpy"
@@ -24,12 +24,10 @@ setuptools.setup(
     extras_require={"docs": docs_extras},
     license="MIT",
     packages=setuptools.find_packages(),
-    # package_dir={"": "src"},
-    # include_package_data=True,
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Programming Language :: Python :: 3",
-        # "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.6",
