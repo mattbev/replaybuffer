@@ -40,6 +40,14 @@ Then, within your project, you can store data:
      actions=action, # vector
      rewards=reward # float
  )
+ # or 
+ # buffer.store(
+ #    **{
+ #        "observations": obs, # image
+ #        "actions": action, # vector
+ #        "rewards": reward # float
+ #    }
+ #)
  ...
 ```
 
