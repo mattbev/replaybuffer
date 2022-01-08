@@ -18,6 +18,8 @@ pip install -e <path_to_repo_base_directory>
 This package only uses `numpy` and python built-ins -- just clone the repo and `pip install numpy` to use it in your project. 
 
 ## Usage
+Documentation is [here](https://mattbeveridge.com/replaybuffer).
+
 This package is meant to be used for experience replay with any data types. To do that, first initialize the buffer:
 ```python
 from replaybuffer import ReplayBuffer
