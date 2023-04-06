@@ -10,13 +10,13 @@ docs_extras = ["sphinx", "docutils"]
 
 setuptools.setup(
     name="replaybuffer",
-    version="0.0.1",
+    version="0.1.0",
     author="Matthew Beveridge",
-    author_email="mattbev@mit.edu",
+    author_email="mattjbeveridge21@gmail.com",
     description="A simple replay buffer for temporal recall.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://mattbeveridge.com/replaybuffer",
+    url="https://github.com/mattbev/replaybuffer",
     keywords=[],
     install_requires=[
         "numpy"
